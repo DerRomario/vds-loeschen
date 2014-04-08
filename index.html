@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 	<meta charset="utf-8">
-	<title>Piratenpartei Austrittsgenerator</title>
+	<title>Vorratsdaten l&ouml;schen!</title>
 
 
 	<link rel="stylesheet" href="./css/foundation.min.css">
@@ -19,6 +19,16 @@
 	<script type="text/javascript" src="./js/mustache.js"></script>
 	<style>.footer {
 		margin-top:20px;
+		margin-bottom:20px;
+	}
+	body {
+		background: #4c2582;
+	}
+	.container {
+		max-width: 960px;
+		margin-left: auto;
+		margin-right: auto;
+		background: white url('https://netzsperren.piratenpartei.at/ppflag.png') no-repeat 130% -80%;
 	}
 	</style>
 	<script type="text/javascript">
@@ -34,16 +44,18 @@
 </head>
 
 <body>
+	<div class="container">
 	<div class="row" style="max-width:50em">
-		<h1>Piratenpartei Austrittsgenerator</h1>
+		<h1>Vorratsdaten l&ouml;schen!</h1>
+		<div class="panel"><p>Der Europäische Gerichtshof hat heute die Vorratsdatenspeicherungsrichtlinie aufgehoben.<br>Schreibe jetzt deinem Provider, damit deine Vorratsdaten gelöscht werden.</p></div>
   <div class="small-12"><div class="panel">
-  	<label>Identifizierungsmerkmale</label>
+  	<label>Persönliche Daten</label>
 <div class="row">
       <div class="large-6 columns">
         <input type="text" placeholder="Name" id="name">
       </div>
       <div class="large-6 columns">
-        <input type="text" placeholder="Mitgliedsnummer (wenn vorhanden)" id="memberid">
+        <input type="text" placeholder="Kundennummer (wenn vorhanden)" id="memberid">
       </div>
 
       <div class="large-6 columns">
@@ -55,33 +67,12 @@
     </div>
 <div class="row">
       <div class="large-12 columns">
-        <label>Gliederung</label>
+        <label>ISP</label>
         <select id="organisation">
-        	<option value="0">Bund</option>
-        	<option value="1">Baden-Württemberg</option>
-	<option value="2">Bayern</option>
-	<option value="3">Berlin</option>
-	<option value="4">Brandenburg</option>
-	<option value="5">Bremen</option>
-	<option value="6">Hamburg</option>
-	<option value="7">Hessen</option>
-	<option value="8">Mecklenburg-Vorpommern</option>
-	<option value="9">Niedersachsen</option>
-	<option value="10">Nordrhein-Westfalen</option>
-	<option value="11">Rheinland-Pfalz</option>
-	<option value="12">Saarland</option>
-	<option value="13">Sachsen</option>
-	<option value="14">Sachsen-Anhalt</option>
-	<option value="15">Schleswig-Holstein</option>
-	<option value="16">Thüringen</option>
+	 	<option value="0">A1</option>
+		<option value="1">UPC</option>
+		<option value="2">...</option>
         </select>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-12 columns">
-        <label>Austrittsgrund</label>
-        <textarea name="reason" cols="50" rows="10" id="reason"></textarea>
       </div>
     </div>
 
@@ -117,15 +108,6 @@
 		</ol>
 	</div>
 	<div class="large-4 columns">
-		<a href="javascript:openEmail()" class="button success">Email öffnen</a>
-		<h4>How-To</h4>
-		<ol>
-			<li>Formular ausfüllen</li>
-			<li>Auf "Email öffnen" klicken</li>
-			<li>Im sich, hoffentlich, öffnenden Mailprogramm auf Absenden klicken.</li>
-		</ol>
-	</div>
-	<div class="large-4 columns">
 		<a href="javascript:generateLink()" class="button success">Link erzeugen</a>
 		<h4>How-To</h4>
 		<ol>
@@ -134,115 +116,34 @@
 			<li>Erzeugten Link weiterverbreiten</li>
 		</ol>
 	</div>
-</div>
+</
 
 <p style="color:#999">Hinweis: Es werden keine Daten gespeichert, das PDF wird lokal per Javascript generiert</p>
 
 
-<div class="footer">Made by <a href="https://twitter.com/viirus42">@viirus42</a>.  <a class="FlattrButton" style="display:none;" rev="flattr;button:compact;" href="http://viirus.github.io/piratenaustritt/"></a>
+<div class="footer">
+Piraten w&auml;hlen!<br>
+Made by <a href="https://twitter.com/burnoutberni">@burnoutberni</a> based on work by <a href="https://twitter.com/viirus42">@viirus42</a>.
+</div>
 <script>
 var organisations = {
 	0:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder@piratenpartei.de"
+		"name":"A1",
+		"address":"Lassallestraße x",
+		"city":"1020 Wien",
+		"email":"xyz@a1.net"
 	},
 	1:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-bw@piratenpartei.de"
+		"name":"UPC",
+		"address":"Teststraße 42",
+		"city":"1234 Wien",
+		"email":"xyz@upc.at"
 	},
 	2:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-by@piratenpartei.de"
-	},
-	3:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-be@piratenpartei.de"
-	},
-	4:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-bb@piratenpartei.de"
-	},
-	5:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-hb@piratenpartei.de"
-	},
-	6:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-hh@piratenpartei.de"
-	},
-	7:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-he@piratenpartei.de"
-	},
-	8:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-mv@piratenpartei.de"
-	},
-	9:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-nds@piratenpartei.de"
-	},
-	10:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-nrw@piratenpartei.de"
-	},
-	11:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-rp@piratenpartei.de"
-	},
-	12:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-sl@piratenpartei.de"
-	},
-	13:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-sn@piratenpartei.de"
-	},
-	14:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-lsa@piratenpartei.de"
-	},
-	15:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-sh@piratenpartei.de"
-	},
-	16:{
-		"name":"Piratenpartei Deutschland",
-		"address":"Pflugstraße 9a",
-		"city":"10115 Berlin",
-		"email":"mitglieder-th@piratenpartei.de"
+		"name":"Provider a",
+		"address":"Testgasse 23",
+		"city":"8020 Graz",
+		"email":"test@provider.at"
 	}
 }
 
@@ -254,67 +155,35 @@ function renderPDF() {
 	var organisation= $("#organisation").val()
 	var address= $("#address").val()
 	var city = $("#city").val()
-	var reason= $("#reason").val()
 	var valediction= $("#valediction option:selected").val()
 
 		var view = {
 	  name: name,
-	  memberid: memberid,
-	  reason:reason
+	  memberid: memberid
 	};
 
-	if(memberid != "") {
-		var text = Mustache.render("Sehr geehrter Vorstand,\n\nhiermit beende ich, {{name}} (Mitgliedsnummer: {{memberid}}), meine Mitgliedschaft bei der Piratenpartei Deutschland. {{reason}}", view);
-	} else {
-		var text = Mustache.render("Sehr geehrter Vorstand,\n\nhiermit beende ich, {{name}}, meine Mitgliedschaft bei der Piratenpartei Deutschland. {{reason}}", view);
-	}
+	var text = Mustache.render("Sehr geehrte Damen und Herren,\n\naufgrund des aktuellen Urteils des Europäischen Gerichtshofes, das die Richtlinie zur Vorratsdatenspeicherung für nicht vereinbar mit dem Recht auf Privatsphäre vereinbar sieht, möchte ich diesen eklatanten Verstoß gegen meine grundlegensten Bürgerrechte nicht mehr länger hinnehmen. Ich fordere Sie hiermit auf, jegliche Daten, die auf Grundlage des § 102a Telekommunikationsgesetz 2003 über meinen Anschluss gespeichert wurden, sofort zu löschen!\n \nSollte die Löschung - aus welchen Gründen auch immer - nicht möglich sein, so ist dieses Schreiben als Auskunftsersuchen gem. den §§1 und 26 DSG 2000 zu sämtlichen Vorratsdaten die aufgrund des § 102a TKG 2003 zu meiner Person gespeichert sind zu verstehen.\n\nUnter Hinweis auf §§ 1, 26 Datenschutzgesetz 2000 (DSG 2000) sowie alle weiteren anwendbaren datenschutzrechtlichen Bestimmungen ersuche ich Sie um Beantwortung der folgenden Fragen:\n- Welcher Art sind die Daten, die Sie über mich speichern?\n- Welchen Inhalt haben diese Daten, woher stammen sie, wozu werden sie verwendet, an wen wurden sie übermittelt?\n- Zu welchem Zweck werden die Datenanwendungen betrieben?\n- Aufgrund welcher Vertrags- bzw. Rechtsgrundlage werden die Daten verwendet?\nSie werden ersucht, auch alle anfallenden Daten zu beauskunften, die sich in anderen Dateien befinden, jedoch über Schlüssel-, Such- und Referenzbegriffe mit meinen personenbezogenen Daten direkt oder indirekt verknüpft werden können (§ 4 DSG 2000).\n\nWerden die Daten nach § 10 DSG 2000 verarbeitet, ersuche ich um die zusätzliche Angabe von Name und Anschrift Ihres Dienstleisters.\n\nIm Sinne einer weitestgehenden Mitarbeit nach § 26 Abs 3 DSG 2000 gebe ich Ihnen folgende zusätzliche Identifikationsdaten bekannt:\nName: {{name}}\nKundennummer: {{memberid}}\n\nName und Adresse dieses Schreibens sind ident mit den bei Ihnen verwalteten Kundendaten. Aufgrund von Vertragsunterlagen bzw. früheren Korrespondenzen oder sonstigen Schreiben haben Sie die Möglichkeit eines Unterschriftsvergleiches wodurch meine Identität in geeigneter Form nachgewiesen ist. Sollten dennoch Zweifel an meiner Identität bestehen, möchte ich Sie darauf hinweisen, dass Sie Ihre Auskunft 'eingeschrieben, eigenhändig mit Rückschein' zustellen lassen können. Die Post überprüft dann die Identität. Weitere Zweifel an der Identität können nicht bestehen, da nur bei identen Namen/Adresse Daten feststellbar sind.\n\nGemäß § 26 DSG 2000 hat die Auskunft binnen acht Wochen schriftlich, kostenlos und in allgemein verständlicher Form zu erfolgen.", view);
 
 	var doc = new jsPDF();
-	doc.setFontSize(13);
+	doc.setFontSize(11);
 
-	doc.text(27,  56, "Piratenpartei Deutschland")
-	doc.text(27,  64, "Pflugstraße 9a");
-	doc.text(27,  74,"10115 Berlin");
+	doc.text(27,  56, organisations[organisation].name)
+	doc.text(27,  64, organisations[organisation].address);
+	doc.text(27,  74, organisations[organisation].city);
 
 	doc.text(150,  30, name)
 	doc.text(150,  38, address);
 	doc.text(150,  46,city);
 
-	doc.setFontSize(16);
+	doc.setFontSize(11);
 	lines = doc.splitTextToSize(text, 180)
 	doc.text(20, 100, lines)
 
-	doc.text(20, 200, valediction);
+	doc.text(20, 265, valediction);
 	doc.setDrawColor(100,100,100);
-	doc.line(20, 215, 80, 215);
-	doc.text(20, 222, name)
-	ga('send', 'pageview', '/render-pdf');
+	doc.line(20, 280, 80, 280);
+	doc.text(20, 285, name);
 	doc.output("datauri");
-}
-
-function openEmail() {
-	var name= $("#name").val()
-	var memberid= $("#memberid").val()
-	var organisation= $("#organisation").val()
-	var address= $("#address").val()
-	var city = $("#city").val()
-	var reason= $("#reason").val()
-	var valediction= $("#valediction option:selected").val()
-
-		var view = {
-	  name: name,
-	  memberid: memberid,
-	  reason:reason,
-	  valediction:valediction,
-	  email:organisations[organisation]["email"]
-	};
-
-	if(memberid != "") {
-		var text = Mustache.render("mailto:{{email}}?subject=Austritt&body=Sehr geehrter Vorstand,%0D%0A%0D%0Ahiermit beende ich, {{name}} (Mitgliedsnummer: {{memberid}}), meine Mitgliedschaft bei der Piratenpartei Deutschland. {{reason}}%0D%0A%0D%0A{{valediction}}%0D%0A{{name}}", view);
-	} else {
-		var text = Mustache.render("mailto:{{email}}?subject=Austritt&body=Sehr geehrter Vorstand,%0D%0A%0D%0Ahiermit beende ich, {{name}}, meine Mitgliedschaft bei der Piratenpartei Deutschland. {{reason}}%0D%0A%0D%0A{{valediction}}%0D%0A{{name}}", view);
-	}
-	window.location = text;
 }
 
 function generateLink() {
@@ -345,21 +214,9 @@ $(function() {
 		$("#organisation").val(linkHash.organisation);
 		$("#address").val(linkHash.address);
 		$("#city").val(linkHash.city);
-		$("#reason").val(linkHash.reason);
 		$("#valediction").val(linkHash.valediction);
 	}
 });
-</script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-40836067-1', 'github.io');
-  ga('send', 'pageview');
-
 </script>
 
 </body>
