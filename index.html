@@ -68,10 +68,14 @@
 <div class="row">
       <div class="large-12 columns">
         <label>ISP</label>
-        <select id="organisation">
-	 	<option value="0">A1</option>
-		<option value="1">UPC</option>
-		<option value="2">...</option>
+	<select id="organisation">
+	 	<option value="0">Provider nicht angeführt</option>
+		<option value="1">A1</option>
+		<option value="2">Drei</option>
+		<option value="3">T-Mobile</option>
+		<option value="4">UPC</option>
+		<option value="5">Liwest</option>
+		<option value="6">Tele2</option>
         </select>
       </div>
     </div>
@@ -128,22 +132,39 @@ Made by <a href="https://twitter.com/burnoutberni">@burnoutberni</a> based on wo
 <script>
 var organisations = {
 	0:{
-		"name":"A1",
-		"address":"Lassallestraße x",
-		"city":"1020 Wien",
-		"email":"xyz@a1.net"
+		"name":"",
+		"address":"",
+		"city":"",
 	},
 	1:{
-		"name":"UPC",
-		"address":"Teststraße 42",
-		"city":"1234 Wien",
-		"email":"xyz@upc.at"
+		"name":"A1 Telekom Austria AG",
+		"address":"Lassallestraße 9",
+		"city":"A-1020 Wien",
 	},
 	2:{
-		"name":"Provider a",
-		"address":"Testgasse 23",
-		"city":"8020 Graz",
-		"email":"test@provider.at"
+		"name":"Hutchison Drei Austria GmbH",
+		"address":"Brünner Straße 52",
+		"city":"A-1210 Wien",
+	}
+	3:{
+		"name":"T-Mobile Austria GmbH",
+		"address":"Rennweg 97-99",
+		"city":"A-1030 Wien",
+	}
+	4:{
+		"name":"UPC Telekabel Wien GmbH",
+		"address":"Wolfganggasse 58-60",
+		"city":"A-1120 Wien",
+	}
+	5:{
+		"name":"LIWEST Kabelmedien GmbH",
+		"address":"Lindengasse 18",
+		"city":"A-4040 Linz",
+	}
+	6:{
+		"name":"Tele2 Telecommunication GmbH",
+		"address":"Donau-City-Straße 11",
+		"city":"A-1220 Wien",
 	}
 }
 
